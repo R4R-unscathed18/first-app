@@ -3,10 +3,15 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
+
+# Leo: I delete sqlite because is source of problems
 # Use sqlite3 as the database for Active Record
-group :developement do
-  gem 'sqlite3' # version 1.3.9 (last one to date) gives error
-end
+#group :developement do
+  #gem 'sqlite3' # version 1.3.9 (last one to date) gives error
+#end
+
+gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,7 +52,6 @@ require 'rbconfig'
 gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor' # used by Heroku to serve static assets such as images and CSS.
 end
 
