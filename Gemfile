@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 group :developement do
-  gem 'sqlite3'
+  gem 'sqlite3' # version 1.3.9 (last one to date) gives error
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -49,4 +49,9 @@ gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
 group :production do
   gem 'pg'
   gem 'rails_12factor' # used by Heroku to serve static assets such as images and CSS.
+end
+
+group :development do
+  gem 'taps'
+  gem 'rvm'
 end
