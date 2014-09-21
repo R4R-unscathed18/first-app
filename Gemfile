@@ -45,3 +45,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 require 'rbconfig'
 gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor' # used by Heroku to serve static assets such as images and CSS.
+end
